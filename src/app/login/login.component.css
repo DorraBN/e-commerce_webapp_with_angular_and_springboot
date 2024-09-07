@@ -1,0 +1,81 @@
+
+form{
+background-color: transparent;
+border-radius: 15px;
+height: 500px;
+width: 320px;
+margin-top: 150px;
+margin-left: 
+450px;
+justify-content: center;
+align-items: center;
+border: 1px solid #000;
+
+
+}
+
+.all{
+margin-top: 45px;
+
+
+
+}
+.d{
+font-size: 15px;
+margin-left: -15px;
+}
+.check{
+    display: flex;
+    margin: 0;
+
+}
+.p2{
+    margin-top: 15px;
+justify-items: center;
+justify-items: center;
+text-align: center;
+}
+.p1{
+    margin-left: 170px;
+    color: red;
+}
+span{
+    color: blueviolet;
+}
+
+p{
+    font-size: 11px;
+  
+}
+input{
+    margin-left: 45px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 200px;
+    border: 1px solid #000;
+    height: 35px;
+    font-size: 15px;
+    margin-left: 50px;
+}
+a{
+    text-decoration: none;
+}
+.btn{
+    border: 1px solid #000;
+    border-radius: 15px;
+    background-color: blueviolet;
+    width: 210px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 60px;
+}
+.btn:hover{
+    background-color: rgb(193, 153, 231);
+    font-weight: 500;
+}
+
+
+.container{ background-image: url('../../assets/fo.jpg');
+    background-size: cover;
+    height: 800px;
+background-repeat: no-repeat;}
