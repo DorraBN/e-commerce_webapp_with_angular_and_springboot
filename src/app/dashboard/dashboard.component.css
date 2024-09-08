@@ -67,6 +67,7 @@ body {
   background-color: var(--sidebar);
   display: flex;
   flex-direction: column;
+  height:900px;
   
   &-header {
     display: flex;

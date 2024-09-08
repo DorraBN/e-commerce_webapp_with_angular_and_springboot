@@ -1,12 +1,12 @@
 <body>
   <div class="form">
-      <div class="title">Welcome</div>
+      <div class="title">Welcome 👋</div>
       <div class="subtitle">Let's create your account!</div>
       <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
           <div class="input-container ic1">
-              <input id="firstname" class="input" formControlName="firstName" type="text" placeholder="First name" />
+              <input id="name" class="input" formControlName="Name" type="text" placeholder="name" />
               <div class="cut"></div>
-              <label for="firstname" class="placeholder">First name</label>
+              <label for="name" class="placeholder">Name</label>
           </div>
           <div class="input-container ic2">
               <input id="phone" class="input" formControlName="phone" type="text" placeholder="Phone" />
@@ -24,7 +24,7 @@
               <label for="password" class="placeholder">Password</label>
           </div>
           <button type="submit" class="submit">Submit</button>
-          <p>Already have an account <span><a href="">Login</a></span></p>
+          <p class="acc">Already have an account <span class="login"><a href="/login">Login</a></span></p>
       </form>
   </div>
 </body>

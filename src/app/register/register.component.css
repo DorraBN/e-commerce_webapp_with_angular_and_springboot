@@ -15,12 +15,22 @@ body {
     background-color: #15172b;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 590px;
+    height: 630px;
     padding: 20px;
-    width: 340px;
+    width: 360px;
    margin-left: 890px;
-   margin-top: 40px;
+   margin-top: 30px;
     text-align: center;
+  }
+a{
+  text-decoration: none;
+}
+.login{
+  color: aqua;
+}
+  .acc{
+    color: wheat;
+    margin-top: 5px;
   }
   
   .title {
