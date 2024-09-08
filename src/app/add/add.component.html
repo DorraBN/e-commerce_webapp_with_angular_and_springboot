@@ -1,167 +1,48 @@
-<div class="demo-page">
-   
-    <main class="demo-page-content">
-     
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="nice-form-group">
+      <label for="name">Product name</label>
+      <input id="name" formControlName="name" type="text" placeholder="Product name" />
+    </div>
   
-      <section>
-        <div class="href-target" id="input-types"></div>
-        <h1>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-justify">
-            <line x1="21" y1="10" x2="3" y2="10" />
-            <line x1="21" y1="6" x2="3" y2="6" />
-            <line x1="21" y1="14" x2="3" y2="14" />
-            <line x1="21" y1="18" x2="3" y2="18" />
-          </svg>
-          Input types
-        </h1>
-        <p>Informations sbout product</p>
+    <div class="nice-form-group">
+      <label for="brand">Brand</label>
+      <input id="brand" formControlName="brand" type="text" placeholder="Brand" />
+    </div>
   
-       
+    <div class="nice-form-group">
+      <label for="stockQuantity">Stock quantity</label>
+      <input id="stockQuantity" formControlName="stockQuantity" type="number" placeholder="Stock quantity" />
+    </div>
   
-        <div class="nice-form-group">
-          <label>Product name</label>
-          <input type="text" placeholder="Product name" value="" />
-        </div>
-        <div class="nice-form-group">
-            <label>Brand</label>
-            <input type="text" placeholder="Brand" value="" />
-          </div>
+    <div class="nice-form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" rows="5" placeholder="Description"></textarea>
+    </div>
   
-        <div class="nice-form-group">
-          <label> stock quantity</label>
-          <input type="number" placeholder=" stock quantity" value="" />
-        </div>
+    <div class="nice-form-group">
+      <label for="price">Price</label>
+      <input id="price" formControlName="price" type="number" placeholder="Price" />
+    </div>
   
-        
-      </section>
+    <div class="nice-form-group">
+      <label for="color">Color</label>
+      <input id="color" formControlName="color" type="color" />
+    </div>
   
-      <section>
-        <div class="href-target" id="checkbox-and-radio"></div>
-    
-    
+    <div class="nice-form-group">
+      <label for="category">Category</label>
+      <select id="category" formControlName="category">
+        <option value="Tshirt">Tshirt</option>
+        <option value="shoes">Shoes</option>
+      </select>
+    </div>
   
-       
-        <br />
-        <p>
-         Set availabilty
-        </p>
+    <div class="nice-form-group">
+      <label for="available">Availability</label>
+      <input id="available" formControlName="available" type="checkbox" /> Available
+      <input id="notAvailable" formControlName="notAvailable" type="checkbox" /> Not Available
+    </div>
   
-        <fieldset class="nice-form-group">
-          <div class="nice-form-group">
-            <input type="checkbox" id="check-3" class="switch" />
-            <label for="check-3">Available</label>
-          </div>
+    <button type="submit" class="btn">Add product</button>
+  </form>
   
-          <div class="nice-form-group">
-            <input type="checkbox" id="check-4" class="switch" />
-            <label for="check-4">
-              Not available
-              
-            </label>
-          </div>
-        </fieldset>
-  
-     
-      </section>
-  
-    
-  
-        
-       
-    
-  
-     
-  
-   
-  
-      <section>
-        <div class="href-target" id="date"></div>
-        <h1>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-            <line x1="16" y1="2" x2="16" y2="6" />
-            <line x1="8" y1="2" x2="8" y2="6" />
-            <line x1="3" y1="10" x2="21" y2="10" />
-          </svg>
-          Date input
-        </h1>
-        <p>
-          Date fields show icons by default. The <code>month</code>,
-          <code>week</code> and <code>date</code> fields have a fixed min
-          width set at 14em. <code>time</code> is set at 7em.
-        </p>
-  
-        <div class="nice-form-group">
-          <label>Month</label>
-          <input type="month" value="2018-05" />
-        </div>
-  
-        <div class="nice-form-group">
-          <label>Week</label>
-          <input type="week" value="2017-W01" />
-        </div>
-  
-        <div class="nice-form-group">
-          <label>Date</label>
-          <input type="date" value="2018-07-22" />
-        </div>
-  
-        <div class="nice-form-group">
-          <label>Time</label>
-          <input type="time" value="13:30" />
-        </div>
-  
-       
-      </section>
-  
-      <section>
-        <div class="href-target" id="other"></div>
-        <h1>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-server">
-            <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
-            <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
-            <line x1="6" y1="6" x2="6.01" y2="6" />
-            <line x1="6" y1="18" x2="6.01" y2="18" />
-          </svg>
-          Other input types
-        </h1>
-  
-        <div class="nice-form-group">
-          <label>Description</label>
-          <textarea rows="5" placeholder="Description"></textarea>
-        </div>
-  
-        <div class="nice-form-group">
-          <label>Select</label>
-          <select>
-            <option>Please select category</option>
-            <option>Tshirt</option>
-            <option>shoes</option>
-          </select>
-        </div>
-  
-        <div class="nice-form-group">
-          <label>File upload</label>
-          <input type="file" />
-        </div>
-  
-    
-  
-        <div class="nice-form-group">
-          <label>Price</label>
-          <input type="number" placeholder="1234" />
-        </div>
-  
-        <div class="nice-form-group">
-          <label>Color</label>
-          <input type="color" />
-        </div>
-  
-      
-      </section>
-  
-      
-  
-    </main>
-    <button class="btn">Add product</button>
-  </div>
