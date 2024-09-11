@@ -1,7 +1,5 @@
 package com.project.backend.entity;
 
-
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,21 +14,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false)
     private String name;
-
     private String phone;
-
-    @Column(nullable = false, unique = true)
     private String email;
-
-    @Column(nullable = false)
     private String password;
 
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    
     public Long getId() {
         return id;
     }
@@ -39,12 +29,12 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstName() {
+    public String getName() {
         return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.name = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPhone() {

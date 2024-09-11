@@ -1,17 +1,17 @@
 package com.project.backend.controller;
 
+import com.project.backend.entity.User;
+import com.project.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.project.backend.entity.User;
-import com.project.backend.service.UserService;
-
 import java.util.List;
 import java.util.Optional;
+
 @RestController
-@RequestMapping("http://127.0.0.1:8081/api/users")
+@RequestMapping("/api/users")
 public class UserController {
 
     @Autowired
@@ -28,12 +28,20 @@ public class UserController {
         Optional<User> user = userService.getUserById(id);
         return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
-
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody User user) {
-        User savedUser = userService.saveUser(user);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
+    public ResponseEntity<?> createUser(@RequestBody User user) {
+        try {
+            User savedUser = userService.saveUser(user);
+            return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
+        } catch (Exception e) {
+            // Log the exception message for debugging
+            System.err.println("Error creating user: " + e.getMessage());
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred: " + e.getMessage());
+        }
     }
+    
+    
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
