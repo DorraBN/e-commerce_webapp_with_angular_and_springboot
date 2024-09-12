@@ -689,3 +689,61 @@ margin-right: 5px;
 .app-content{
     display: flex;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+thead {
+  background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+td a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 5px;
+}
+
+td a:hover {
+  color: #007bff;
+}
+
+.fas {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.action-button1{
+  border-radius: 5px;
+  border: 1px solid #000;
+  background-color: rgb(163, 166, 177);
+  color: wheat;
+}
+.action-button2{
+  border-radius: 5px;
+  border: 1px solid #000;
+  background-color: rgb(222, 16, 16);
+  color: wheat;
+  margin-left: 15px;
+}
+.button{
+  display: flex;
+}
