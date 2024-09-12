@@ -1,0 +1,12 @@
+.user-detail-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+  

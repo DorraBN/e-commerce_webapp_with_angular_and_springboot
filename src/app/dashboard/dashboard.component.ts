@@ -24,13 +24,25 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  viewUser(user: any) {
-    // Implémentez la logique pour afficher les détails de l'utilisateur
-    console.log('View user:', user);
-  }
+
 
   deleteUser(userId: number) {
-    // Implémentez la logique pour supprimer l'utilisateur
-    console.log('Delete user with ID:', userId);
-  }
+    if (confirm('Are you sure you want to delete this user?')) {
+      this.userService.deleteUser(userId).subscribe(() => {
+        // Filtrer la liste des utilisateurs pour exclure l'utilisateur supprimé
+        this.users = this.users.filter(user => user.id !== userId);
+        console.log('User deleted:', userId);
+      }, (error: any) => {
+        console.error('Error deleting user:', error);
+      });
+    }}
+    viewUser(userId: number) {
+      // Implémentez la logique pour afficher les détails de l'utilisateur
+      this.userService.getUserById(userId).subscribe(user => {
+        console.log('View user:', user);
+        // Vous pouvez ajouter ici la logique pour afficher les détails dans l'interface utilisateur
+      }, (error: any) => {
+        console.error('Error fetching user details:', error);
+      });
+    }
 }

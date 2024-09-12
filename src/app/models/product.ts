@@ -1,16 +1,16 @@
 export interface Product {
     id?: number;
-    name: string;
-    brand: string;
-    stockQuantity: number;
-    available: boolean;
-    notAvailable: boolean;
+    nom: string;
+   description: string;
+    stock: number;
+    disponible: boolean;
+
     date: string;
     time: string;
-    description: string;
-    category: 'Tshirt' | 'shoes';
-    image: string;
-    price: number;
-    color: string;
+    
+    categorie: 'Tshirt' | 'shoes';
+    url_image: string;
+    prix: number;
+   
   }
   

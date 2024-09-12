@@ -7,7 +7,7 @@ import { Product } from '../models/product';
   providedIn: 'root'
 })
 export class ProductService {
-  private baseUrl = 'http://localhost:8080/api/products';
+  private baseUrl = 'http://localhost:8082/api/products';
 
   constructor(private http: HttpClient) { }
 
@@ -19,11 +19,14 @@ export class ProductService {
     return this.http.get<Product>(`${this.baseUrl}/${id}`);
   }
 
-  addProduct(product: any) {
-    return this.http.post(this.baseUrl, product);
+  addProduct(product: Product): Observable<Product> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<Product>(this.baseUrl, product, { headers });
   }
+
   updateProduct(id: number, product: Product): Observable<Product> {
-    return this.http.put<Product>(`${this.baseUrl}/${id}`, product);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.put<Product>(`${this.baseUrl}/${id}`, product, { headers });
   }
 
   deleteProduct(id: number): Observable<void> {
