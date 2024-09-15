@@ -37,10 +37,9 @@ export class DashboardComponent implements OnInit {
       });
     }}
     viewUser(userId: number) {
-      // Implémentez la logique pour afficher les détails de l'utilisateur
+    
       this.userService.getUserById(userId).subscribe(user => {
         console.log('View user:', user);
-        // Vous pouvez ajouter ici la logique pour afficher les détails dans l'interface utilisateur
       }, (error: any) => {
         console.error('Error fetching user details:', error);
       });

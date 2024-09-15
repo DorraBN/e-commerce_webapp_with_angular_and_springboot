@@ -8,7 +8,7 @@ export interface Product {
     date: string;
     time: string;
     
-    categorie: 'Tshirt' | 'shoes';
+    categorie: string;
     url_image: string;
     prix: number;
    

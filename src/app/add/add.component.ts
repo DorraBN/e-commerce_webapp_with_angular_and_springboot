@@ -19,15 +19,14 @@ export class AddComponent implements OnInit {
 
   ngOnInit(): void {
     this.productForm = this.fb.group({
-      name: ['', Validators.required],
-      brand: ['', Validators.required],
+      nom: ['', Validators.required],
+      category: ['', Validators.required],
       stockQuantity: [0, Validators.required],
       description: [''],
       price: [0, Validators.required],
       color: ['#000000'],
-      category: ['Tshirt'],
-      available: [false],
-      notAvailable: [false],
+     
+    
     });
   }
 

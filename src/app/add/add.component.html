@@ -1,48 +1,88 @@
-<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-    <div class="nice-form-group">
-      <label for="name">Product name</label>
-      <input id="name" formControlName="name" type="text" placeholder="Product name" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Form</title>
+  <style>
+    .input-container {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .input, .textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .submit {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #28a745;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    select.input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <div class="form">
+      <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
+        <div class="input-container">
+          <input id="nom" name="nom" class="input" formControlName="nom" type="text" placeholder="Name" required />
+          <label for="nom">Name</label>
+        </div>
+        
+        <div class="input-container">
+          <input id="categorie" name="categorie" class="input" formControlName="categorie" type="text" placeholder="Category" required />
+          <label for="categorie">Category</label>
+        </div>
+
+        <div class="input-container">
+          <input id="stock" name="stock" class="input" formControlName="stock" type="number" placeholder="Stock" required />
+          <label for="stock">Stock</label>
+        </div>
+
+        <div class="input-container">
+          <label for="disponible">Available</label>
+          <select id="disponible" name="disponible" formControlName="disponible" class="input" required>
+            <option value="" disabled>Select Availability</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </div>
+        <br>
+
+        <div class="input-container">
+          <input id="image" name="image" class="input" type="file"  />
+          <label for="image">Upload Image</label>
+        </div>
+
+        <div class="input-container">
+          <input id="prix" name="prix" class="input" formControlName="prix" type="number" step="0.01" placeholder="Price" required />
+          <label for="prix">Price</label>
+        </div> 
+
+        <div class="input-container">
+          <textarea id="description" name="description" formControlName="description" class="textarea" rows="2" placeholder="Description" required></textarea>
+          <label for="description">Description</label>
+        </div>
+
+        <button type="submit" class="submit">Submit</button>
+      </form>
     </div>
-  
-    <div class="nice-form-group">
-      <label for="brand">Brand</label>
-      <input id="brand" formControlName="brand" type="text" placeholder="Brand" />
-    </div>
-  
-    <div class="nice-form-group">
-      <label for="stockQuantity">Stock quantity</label>
-      <input id="stockQuantity" formControlName="stockQuantity" type="number" placeholder="Stock quantity" />
-    </div>
-  
-    <div class="nice-form-group">
-      <label for="description">Description</label>
-      <textarea id="description" formControlName="description" rows="5" placeholder="Description"></textarea>
-    </div>
-  
-    <div class="nice-form-group">
-      <label for="price">Price</label>
-      <input id="price" formControlName="price" type="number" placeholder="Price" />
-    </div>
-  
-    <div class="nice-form-group">
-      <label for="color">Color</label>
-      <input id="color" formControlName="color" type="color" />
-    </div>
-  
-    <div class="nice-form-group">
-      <label for="category">Category</label>
-      <select id="category" formControlName="category">
-        <option value="Tshirt">Tshirt</option>
-        <option value="shoes">Shoes</option>
-      </select>
-    </div>
-  
-    <div class="nice-form-group">
-      <label for="available">Availability</label>
-      <input id="available" formControlName="available" type="checkbox" /> Available
-      <input id="notAvailable" formControlName="notAvailable" type="checkbox" /> Not Available
-    </div>
-  
-    <button type="submit" class="btn">Add product</button>
-  </form>
-  
+  </main>
+
+</body>
+</html>
